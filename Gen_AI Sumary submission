@@ -1,0 +1,48 @@
+
+Summary of "Attention Is All You Need - By: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin" - Deepankar R Dhawale 21070521112
+
+Introduction:
+The paper "Attention Is All You Need" presents the Transformer model, a groundbreaking approach for handling tasks like language modeling and machine translation. Unlike earlier models that relied on recurrent or convolutional layers, the Transformer uses attention mechanisms exclusively. This change allows the Transformer to process information more efficiently and effectively.
+
+Background:
+Before the Transformer, most sequence modeling tasks used Recurrent Neural Networks (RNNs) or their enhanced versions like Long Short-Term Memory (LSTM) and Gated Recurrent Units (GRUs). These models process data sequentially, which limits their efficiency and makes handling long sequences challenging. Convolutional Neural Networks (CNNs) offer better parallelization but still struggle with long-range dependencies.
+
+The Transformer Model:
+The Transformer gets rid of recurrence and convolutions entirely, relying only on self-attention mechanisms. It's built from an encoder and a decoder, each made up of multiple identical layers.
+
+Encoder: Contains six layers, each with two parts: a multi-head self-attention mechanism and a feed-forward neural network. Residual connections and layer normalization help improve performance.
+
+Decoder: Also has six layers, but with an extra attention layer that looks at the encoder's output. Masking ensures that predictions for each position only depend on the known preceding outputs.
+
+Attention Mechanisms:
+
+Scaled Dot-Product Attention: Calculates attention scores by taking the dot product of query and key vectors, then scaling by the square root of the dimension. This scaling helps manage large dot products and maintain effective gradient sizes.
+
+Multi-Head Attention: Instead of a single attention operation, the model uses several in parallel, allowing it to focus on different parts of the sequence simultaneously. The outputs are then combined and transformed.
+
+Positional Encoding:
+Since the Transformer doesn't use recurrence or convolutions to keep track of the sequence order, it adds positional encodings to the input embeddings. These encodings use sine and cosine functions to represent positions in the sequence.
+
+Advantages of Self-Attention:
+
+Computational Efficiency: Self-attention layers are faster than RNNs for sequences shorter than the representation dimension.
+
+Parallelization: Self-attention supports better parallelization compared to RNNs, reducing the number of sequential operations needed.
+
+Path Length: Self-attention connects all positions directly, making it easier to learn relationships over long distances.
+
+Results:
+The Transformer achieved state-of-the-art results on two key machine translation tasks:
+
+WMT 2014 English-to-German: It scored 28.4 BLEU, outperforming previous models.
+WMT 2014 English-to-French: It achieved a BLEU score of 41.8, setting a new record.
+The model also performed well on English constituency parsing tasks, proving effective with both large and limited datasets.
+
+Conclusion:
+The Transformer model marks a significant leap forward in sequence transduction tasks by using self-attention mechanisms. It outperforms traditional RNN and CNN-based models in both performance and efficiency, making it a powerful tool for natural language processing and other sequence modeling challenges.
+
+
+
+
+
+
